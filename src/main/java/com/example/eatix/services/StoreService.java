@@ -1,7 +1,7 @@
-package com.example.project.services;
+package com.example.eatix.services;
 
-import com.example.project.models.Store;
-import com.example.project.repositories.StoreRepository;
+import com.example.eatix.models.Store;
+import com.example.eatix.repositories.StoreRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,14 +10,12 @@ import java.util.Optional;
 
 @Service
 public class StoreService {
-    private final List<Store> resultList;
 
     private final StoreRepository storeRepository;
 
     public StoreService(StoreRepository storeRepository) {
         this.storeRepository = storeRepository;
-        resultList = new ArrayList<>();
-    }
+   }
 
     public List<Store> getStores() {
         return storeRepository.findAll();

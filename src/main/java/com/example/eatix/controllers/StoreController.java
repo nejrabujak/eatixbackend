@@ -1,7 +1,7 @@
-package com.example.project.controllers;
+package com.example.eatix.controllers;
 
-import com.example.project.models.Store;
-import com.example.project.services.StoreService;
+import com.example.eatix.models.Store;
+import com.example.eatix.services.StoreService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
