@@ -39,6 +39,6 @@ public class StoreService {
     }
 
     public void delete(long id) {
-
+        
     }
 }
