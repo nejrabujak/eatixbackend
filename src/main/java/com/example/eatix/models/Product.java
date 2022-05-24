@@ -8,12 +8,12 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "store")
+@Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Store {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,18 +22,13 @@ public class Store {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "type")
+    private String type;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "expiring_date")
+    private String expiringDate;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "price")
+    private Double price;
 
-    @Column(name = "city")
-    private String city;
-
-    @Column(name = "registration_id")
-    private String registrationId;
 }
