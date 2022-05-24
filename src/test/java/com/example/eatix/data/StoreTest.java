@@ -15,6 +15,7 @@ public class StoreTest {
         store.setAddress("Mustafe Ice Voljevice 12");
         store.setPhoneNumber("033/852-369");
         store.setCity("Sarajevo");
+        store.setRegistrationId("15b8k");
 
         return store;
     }
