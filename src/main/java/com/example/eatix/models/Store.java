@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "store")
+@Table(name = "Store")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -39,4 +40,7 @@ public class Store {
 
     @Column(name = "registration_id")
     private String registrationId;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    private List<Product> products;
 }

@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product")
+@Table(name = "Product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,6 +18,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "product", referencedColumnName = "id")
+    private Product product;
 
     @Column(name = "name")
     private String name;
