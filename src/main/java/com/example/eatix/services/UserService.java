@@ -1,5 +1,6 @@
 package com.example.eatix.services;
 
+import com.example.eatix.models.Store;
 import com.example.eatix.models.User;
 import com.example.eatix.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -26,18 +27,23 @@ public class UserService {
             return userOptional.get();
         }
 
-        throw new RuntimeException("Store with id:" + id + " does not exist!");
+        throw new RuntimeException("User with id:" + id + " does not exist!");
     }
 
-    public User create(User model) {
-        return userRepository.save(model);
+    public User create(User user) {
+
+        return userRepository.save(user);
     }
 
-    public User update(User model, long id) {
+    public User findById(long id) {
+        if(userRepository.findById(id).isPresent()){
+            return userRepository.findById(id).get();
+        }
         return null;
     }
 
     public void delete(long id) {
-
+        User user = findById(id);
+        userRepository.delete(user);
     }
 }
