@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.http.HttpStatus;
 
 import javax.persistence.*;
 
@@ -34,5 +35,4 @@ public class Product {
 
     @Column(name = "price")
     private Double price;
-
 }

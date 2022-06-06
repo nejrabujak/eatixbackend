@@ -1,9 +1,7 @@
 package com.example.eatix.controllers;
 
 import com.example.eatix.models.Product;
-import com.example.eatix.models.Store;
 import com.example.eatix.services.ProductService;
-import com.example.eatix.services.StoreService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +29,12 @@ public class ProductController {
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         return productService.create(product);
+    }
+
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable(value = "id") long id) {
+        productService.delete(id);
     }
 }
 

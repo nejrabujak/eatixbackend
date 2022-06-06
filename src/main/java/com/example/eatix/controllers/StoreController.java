@@ -1,6 +1,8 @@
 package com.example.eatix.controllers;
 
+import com.example.eatix.models.Product;
 import com.example.eatix.models.Store;
+import com.example.eatix.services.ProductService;
 import com.example.eatix.services.StoreService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class StoreController {
     }
 
     @GetMapping
-    public List<Store> getItems() {
+    public List<Store> getStores() {
         return storeService.getStores();
     }
 
@@ -31,4 +33,10 @@ public class StoreController {
         return storeService.create(store);
     }
 
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable(value = "id") long id) {
+        storeService.delete(id);
+    }
 }
+

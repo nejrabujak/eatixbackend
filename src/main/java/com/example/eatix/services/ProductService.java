@@ -32,15 +32,21 @@ public class ProductService {
         throw new RuntimeException("Product with id:" + id + " does not exist!");
     }
 
-    public Product create(Product model) {
-        return productRepository.save(model);
+    public Product create(Product product) {
+        return productRepository.save(product);
     }
 
-    public Product update(Product model, long id) {
+
+    public Product findById(long id) {
+        if(productRepository.findById(id).isPresent()){
+            return productRepository.findById(id).get();
+        }
         return null;
     }
 
     public void delete(long id) {
-
+        Product product = findById(id);
+        productRepository.delete(product);
     }
+
 }
