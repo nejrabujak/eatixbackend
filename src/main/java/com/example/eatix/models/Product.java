@@ -21,7 +21,7 @@ public class Product {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "product", referencedColumnName = "id")
+    @JoinColumn(name = "app-store", referencedColumnName = "id")
     private Product product;
 
     @Column(name = "name")
