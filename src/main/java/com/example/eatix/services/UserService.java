@@ -12,11 +12,9 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
     public List<User> getUsers() {
         return userRepository.findAll();
     }
@@ -46,4 +44,6 @@ public class UserService {
         User user = findById(id);
         userRepository.delete(user);
     }
+
+
 }

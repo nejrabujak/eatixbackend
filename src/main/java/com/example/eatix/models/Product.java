@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "app_product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

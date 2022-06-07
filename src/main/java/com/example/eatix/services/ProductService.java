@@ -14,12 +14,16 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-
+    private final List<Product> resultList;
     public ProductService(ProductRepository productRepository) {
+
         this.productRepository = productRepository;
+        resultList = new ArrayList<>();
     }
 
+
     public List<Product> getProducts() {
+
         return productRepository.findAll();
     }
 
@@ -33,6 +37,7 @@ public class ProductService {
     }
 
     public Product create(Product product) {
+
         return productRepository.save(product);
     }
 
