@@ -17,7 +17,7 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://eatix.netlify.app");
+                        .allowedOrigins("http://localhost:4200");
             }
         };
     }

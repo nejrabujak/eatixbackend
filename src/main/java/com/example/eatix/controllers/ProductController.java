@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "http://localhost:8080")
+
 public class ProductController {
 
     private final ProductService productService;
@@ -24,16 +24,19 @@ public class ProductController {
         return productService.getProducts();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Product getProduct(@PathVariable long id) {
         return productService.getById(id);
     }
 
+    @CrossOrigin
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         return productService.create(product);
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         productService.delete(id);

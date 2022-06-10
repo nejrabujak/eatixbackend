@@ -34,7 +34,7 @@ public class User {
     private String password;
 
     @Column(name = "confirm_password")
-    private String confirmPassword;
+    private String confirmPassworduuser;
 
     @Column(name = "address")
     private String address;

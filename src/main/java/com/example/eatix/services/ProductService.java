@@ -30,11 +30,9 @@ public class ProductService {
         throw new RuntimeException("Product with id:" + id + " does not exist!");
     }
 
-    public Product create(Product product) {
-
-        return productRepository.save(product);
+    public Product create(Product model) {
+        return productRepository.save(model);
     }
-
 
     public void delete(long id) {
         productRepository.deleteById(id);
