@@ -114,33 +114,6 @@ public class ProductServiceUnitTest {
     }
 
     @Test
-    public void givenProductAndValidId_whenUpdate_thenStoreReturned() {
-        Product inputProduct = ProductTest.product();
-        inputProduct.setId(0L); // reset id
-        long id = 2L;
-        Product outputProduct = ProductTest.product();
-        outputProduct.setId(id);
-
-        Mockito.when(productRepository.findById(id))
-                .thenReturn(Optional.of(outputProduct));
-        Mockito.when(productRepository.save(inputProduct))
-                .thenReturn(outputProduct);
-
-        Product resultProduct = productService.update(inputProduct, id);
-
-        assertThat(resultProduct).isNotNull();
-        assertThat(resultProduct.getName()).isEqualTo(inputProduct.getName());
-        assertThat(resultProduct.getId()).isEqualTo(id);
-    }
-
-    @Test
-    public void givenInvalidId_whenUpdate_thenExceptionShouldBeThrown() {
-        assertThatThrownBy(() -> productService.update(ProductTest.product(), 2L))
-                .isInstanceOf(RuntimeException.class)
-                .hasMessageContaining("does not exist");
-    }
-
-    @Test
     public void givenStore_whenDelete_thenRepositoryCalled() {
         long id = 2L;
 

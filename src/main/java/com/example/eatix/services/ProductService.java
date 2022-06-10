@@ -1,12 +1,9 @@
 package com.example.eatix.services;
 
 import com.example.eatix.models.Product;
-import com.example.eatix.models.Store;
 import com.example.eatix.repositories.ProductRepository;
-import com.example.eatix.repositories.StoreRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,12 +11,13 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
+
     public List<Product> getProducts() {
+
         return productRepository.findAll();
     }
 
@@ -32,21 +30,12 @@ public class ProductService {
         throw new RuntimeException("Product with id:" + id + " does not exist!");
     }
 
-    public Product create(Product product) {
-        return productRepository.save(product);
-    }
-
-
-    public Product findById(long id) {
-        if(productRepository.findById(id).isPresent()){
-            return productRepository.findById(id).get();
-        }
-        return null;
+    public Product create(Product model) {
+        return productRepository.save(model);
     }
 
     public void delete(long id) {
-        Product product = findById(id);
-        productRepository.delete(product);
+        productRepository.deleteById(id);
     }
 
 }

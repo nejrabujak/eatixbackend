@@ -14,7 +14,7 @@ public class ProductTest {
         product.setName("Apple");
         product.setType("fruit");
         product.setExpiringDate("15.10.2022");
-        product.setPrice(2.00);
+        product.setPrice("2.00");
 
         return product;
     }

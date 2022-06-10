@@ -2,6 +2,10 @@ package com.example.eatix;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 public class EatixApplication {
@@ -9,5 +13,4 @@ public class EatixApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EatixApplication.class, args);
 	}
-
 }

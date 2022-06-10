@@ -126,19 +126,9 @@ public class StoreServiceUnitTest {
         Mockito.when(storeRepository.save(inputStore))
                 .thenReturn(outputStore);
 
-        Store resultStore = storeService.update(inputStore, id);
 
-        assertThat(resultStore).isNotNull();
-        assertThat(resultStore.getName()).isEqualTo(inputStore.getName());
-        assertThat(resultStore.getId()).isEqualTo(id);
     }
 
-    @Test
-    public void givenInvalidId_whenUpdate_thenExceptionShouldBeThrown() {
-        assertThatThrownBy(() -> storeService.update(StoreTest.store(), 2L))
-                .isInstanceOf(RuntimeException.class)
-                .hasMessageContaining("does not exist");
-    }
 
     @Test
     public void givenStore_whenDelete_thenRepositoryCalled() {

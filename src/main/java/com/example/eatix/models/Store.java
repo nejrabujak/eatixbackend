@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Store")
+@Table(name = "app_store")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -29,6 +29,9 @@ public class Store {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "confirm_password")
+    private String confirmPassword;
+
     @Column(name = "address")
     private String address;
 
@@ -41,6 +44,6 @@ public class Store {
     @Column(name = "registration_id")
     private String registrationId;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "store")
     private List<Product> products;
 }
