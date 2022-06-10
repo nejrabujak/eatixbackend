@@ -42,6 +42,4 @@ public class User {
     @Column(name = "city")
     private String city;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-    private List<Product> products;
 }

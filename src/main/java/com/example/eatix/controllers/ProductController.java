@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
+@CrossOrigin(origins = "http://localhost:8080")
 public class ProductController {
 
     private final ProductService productService;
@@ -16,8 +17,10 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @CrossOrigin
     @GetMapping
     public List<Product> getProducts() {
+
         return productService.getProducts();
     }
 
@@ -31,9 +34,8 @@ public class ProductController {
         return productService.create(product);
     }
 
-
-    @DeleteMapping("{id}")
-    public void delete(@PathVariable(value = "id") long id) {
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable long id) {
         productService.delete(id);
     }
 }

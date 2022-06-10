@@ -21,8 +21,8 @@ public class Product {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "product", referencedColumnName = "id")
-    private Product product;
+    @JoinColumn(name = "store", referencedColumnName = "id")
+    private Store store;
 
     @Column(name = "name")
     private String name;
@@ -34,5 +34,5 @@ public class Product {
     private String expiringDate;
 
     @Column(name = "price")
-    private Double price;
+    private String price;
 }

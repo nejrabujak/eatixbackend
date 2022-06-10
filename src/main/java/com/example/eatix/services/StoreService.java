@@ -37,15 +37,7 @@ public class StoreService {
         return storeRepository.save(store);
     }
 
-    public Store findById(long id) {
-        if(storeRepository.findById(id).isPresent()){
-            return storeRepository.findById(id).get();
-        }
-        return null;
-    }
-
     public void delete(long id) {
-        Store store = findById(id);
-        storeRepository.delete(store);
+        storeRepository.deleteById(id);
     }
 }
