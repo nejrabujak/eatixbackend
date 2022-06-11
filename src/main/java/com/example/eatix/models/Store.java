@@ -44,6 +44,4 @@ public class Store {
     @Column(name = "registration_id")
     private String registrationId;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "store")
-    private List<Product> products;
 }

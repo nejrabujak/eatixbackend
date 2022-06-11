@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/stores")
+
 public class StoreController {
 
     private final StoreService storeService;
@@ -16,28 +17,28 @@ public class StoreController {
         this.storeService = storeService;
     }
 
+    @CrossOrigin
     @GetMapping
     public List<Store> getStores() {
 
         return storeService.getStores();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Store getStore(@PathVariable long id) {
-
         return storeService.getById(id);
     }
 
+    @CrossOrigin
     @PostMapping
     public Store createStore(@RequestBody Store store) {
-
         return storeService.create(store);
     }
 
-
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         storeService.delete(id);
     }
 }
-
