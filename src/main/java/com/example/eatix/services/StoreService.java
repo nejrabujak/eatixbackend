@@ -1,6 +1,5 @@
 package com.example.eatix.services;
 
-import com.example.eatix.models.Product;
 import com.example.eatix.models.Store;
 import com.example.eatix.repositories.StoreRepository;
 import org.springframework.stereotype.Service;
@@ -12,11 +11,10 @@ import java.util.Optional;
 public class StoreService {
 
     private final StoreRepository storeRepository;
-
     public StoreService(StoreRepository storeRepository) {
-
         this.storeRepository = storeRepository;
-   }
+    }
+
 
     public List<Store> getStores() {
 
@@ -32,12 +30,12 @@ public class StoreService {
         throw new RuntimeException("Store with id:" + id + " does not exist!");
     }
 
-    public Store create(Store store) {
-
-        return storeRepository.save(store);
+    public Store create(Store model) {
+        return storeRepository.save(model);
     }
 
     public void delete(long id) {
         storeRepository.deleteById(id);
     }
+
 }

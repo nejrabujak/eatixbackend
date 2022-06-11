@@ -1,7 +1,9 @@
 package com.example.eatix.services;
 
+import com.example.eatix.models.Product;
 import com.example.eatix.models.Store;
 import com.example.eatix.models.User;
+import com.example.eatix.repositories.ProductRepository;
 import com.example.eatix.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +13,15 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
     private final UserRepository userRepository;
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
+
     public List<User> getUsers() {
+
         return userRepository.findAll();
     }
 
@@ -28,22 +34,12 @@ public class UserService {
         throw new RuntimeException("User with id:" + id + " does not exist!");
     }
 
-    public User create(User user) {
-
-        return userRepository.save(user);
-    }
-
-    public User findById(long id) {
-        if(userRepository.findById(id).isPresent()){
-            return userRepository.findById(id).get();
-        }
-        return null;
+    public User create(User model) {
+        return userRepository.save(model);
     }
 
     public void delete(long id) {
-        User user = findById(id);
-        userRepository.delete(user);
+        userRepository.deleteById(id);
     }
-
 
 }

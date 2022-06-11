@@ -20,10 +20,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "store", referencedColumnName = "id")
-    private Store store;
-
     @Column(name = "name")
     private String name;
 

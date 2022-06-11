@@ -34,12 +34,11 @@ public class User {
     private String password;
 
     @Column(name = "confirm_password")
-    private String confirmPassworduuser;
+    private String confirmPassword;
 
     @Column(name = "address")
     private String address;
 
     @Column(name = "city")
     private String city;
-
 }
