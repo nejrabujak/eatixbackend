@@ -1,6 +1,6 @@
-## EatIx BackEnd
+# EatIx BackEnd
 
-# Description
+## Description
 The repository contains the full backend code for the application EatIx  
 
 ## Applications Used
