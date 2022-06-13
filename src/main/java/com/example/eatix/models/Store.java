@@ -29,9 +29,6 @@ public class Store {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "confirm_password")
-    private String confirmPassword;
-
     @Column(name = "address")
     private String address;
 
