@@ -32,7 +32,7 @@ This project was generated with:
 -  Models  
 -  pom.xml  
 -  application.jml  
--  
+
 ## Future Implementations
 
 - Enable all sign in features 
