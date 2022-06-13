@@ -1,10 +1,6 @@
 package com.example.eatix.controllers;
 
-import com.example.eatix.models.Product;
-import com.example.eatix.models.Store;
 import com.example.eatix.models.User;
-import com.example.eatix.services.ProductService;
-import com.example.eatix.services.StoreService;
 import com.example.eatix.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +17,7 @@ public class UserController {
     }
 
     @CrossOrigin
-    @GetMapping
+    @GetMapping()
     public List<User> getUsers() {
 
         return userService.getUsers();
