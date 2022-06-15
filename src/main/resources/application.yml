@@ -18,5 +18,5 @@ spring:
 
 service:
   ui:
-    url: ${FRONTEND_API_URL:https://eatix.netlify.app}
+    url: ${FRONTEND_API_URL:https://eatix.netlify.app/#/}
 
