@@ -20,7 +20,7 @@ This project was generated with:
 - Clone or Download the repository from: https://github.com/nejrabujak/eatixbackend  
 - run debug  
 - check database through pgAdmin  
-- check backend through Heroku
+- (check backend through Heroku)
 
 ## Crucial Aspects
 -  CRUD  
