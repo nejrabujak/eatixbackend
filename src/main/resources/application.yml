@@ -9,7 +9,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    openInView: false
+    openInView: true
     show_sql: true
     generate-ddl: true
   data:
@@ -18,5 +18,5 @@ spring:
 
 service:
   ui:
-    url: ${FRONTEND_API_URL:https://eatix.netlify.app/}
+    url: ${FRONTEND_API_URL:https://eatix.netlify.app}
 
