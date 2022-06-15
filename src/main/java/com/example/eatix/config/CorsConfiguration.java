@@ -16,7 +16,7 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods("*")
-                        .allowedOrigins("https://eatix.netlify.app/");
+                        .allowedOrigins("https://eatix.netlify.app");
             }
         };
     }
